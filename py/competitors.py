@@ -1,10 +1,10 @@
 '''
-This file is part of an ICSE'18 submission that is currently under review. 
+This file is part of an ICSE'18 submission that is currently under review.
 For more information visit: https://github.com/icse18-FAST/FAST.
-    
+
 This is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as 
-published by the Free Software Foundation, either version 3 of the 
+it under the terms of the GNU General Public License as
+published by the Free Software Foundation, either version 3 of the
 License, or (at your option) any later version.
 
 This software is distributed in the hope that it will be useful,
@@ -24,6 +24,7 @@ along with this source.  If not, see <http://www.gnu.org/licenses/>.
 
 from collections import defaultdict
 from collections import OrderedDict
+from functools import reduce
 from pickle import dump, load
 from struct import pack, unpack
 import bz2
@@ -287,7 +288,7 @@ def ga_s(input_file):
 
         # store spanning file
         with open(spanfile, "w") as fout:
-            for tcID in xrange(1, len(TCS)):
+            for tcID in range(1, len(TCS)):
                 fout.write(" ".join(TCS[tcID]) + "\n")
 
     def select(TS, U, Cg):
